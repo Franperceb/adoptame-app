@@ -32,6 +32,9 @@ class PetService {
       deletePet(id) {
         return this.service.delete(`/pets/${id}`)
       }
+      upload(data) {
+        return this.service.post("/pets/upload", data);
+      }
     }
     
 

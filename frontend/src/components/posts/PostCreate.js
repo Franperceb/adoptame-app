@@ -56,5 +56,3 @@ function PostCreate(props) {
 }
 
 export default PostCreate
-
-

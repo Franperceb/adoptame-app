@@ -7,13 +7,15 @@ const petService = new PetService()
 
 
 function PetList() {
+ const [pets, setPets] = useState([])
 
   useEffect(()=> {
     petService
     .getAllPets()
     .then(({data}) => {
+      console.log(data)
       setPets(prevState => {
-        return [...prevState, ...data.pets]
+        return [...prevState, ...data.pets.puppy]
       })
 
       })
@@ -22,7 +24,6 @@ function PetList() {
       })
   },[])
 
-  const [pets, setPets] = useState([])
 
 
 
