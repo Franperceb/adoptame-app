@@ -5,8 +5,9 @@ const User = require('../models/User')
 
 
 exports.getAllPets = (req,res,next) =>{
-  Pet.find()
-  .then(pets => res.status(200).json({pets})  )
+ 
+  User.findById(req.user._id).populate('puppy')
+  .then(pets => res.status(200).json({pets}) )
   .catch(err => res.status(500).json({err}))
 }
 
@@ -27,6 +28,7 @@ exports.createPet = async (req,res,next) => {
     
 }catch(err){ 
   res.status(500).json(err)
+  console.log(err)
 }
 }
 
@@ -42,4 +44,16 @@ exports.deletePet = (req,res,next) =>{
   Pet.findByIdAndDelete(id)
   .then(pet => res.status(200).json({pet,msg: 'Created'}))
   .catch(err => res.status(500).json(err))
+
+  exports.postUpload = async (req, res, next) => {
+    try {
+  
+      req.pet = await Pet.findByIdAndUpdate(req.pet._id, { image: req.file.url }, { new: true });
+      
+      res.status(200).json({ pet: req.pet, msg: "Image uploaded" });
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }; 
 }

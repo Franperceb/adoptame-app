@@ -1,6 +1,6 @@
-  const User = require('../models/User')
+const User = require('../models/User')
 const { signToken, verifyToken } = require('../config/jwt')
-
+const Post  = require('../models/Post')
 
 exports.signup = (req, res, next) => {
   User.register({ ...req.body, role: 'USER' }, req.body.password)
@@ -59,5 +59,14 @@ exports.postEdit = async (req, res, next) => {
 	} catch (error) {
 		console.error(error);
 		res.status(401).json({ error });
-	}
+  } 
 };
+
+
+exports.getAllUsers = (req,res,next) =>{
+  console.log(req.user.post._id)
+  console.log(req.user.id)
+  Post.findById(req.user.post)
+  .then(post => res.status(200).json({post}))
+  .catch(err => res.status(500).json({err}))
+}

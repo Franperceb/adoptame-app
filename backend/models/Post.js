@@ -12,7 +12,7 @@ const postSchema = Schema(
     authorId: {
       type: Schema.Types.ObjectId,
       ref: "User"
-      
+   
     }
   },
   {  

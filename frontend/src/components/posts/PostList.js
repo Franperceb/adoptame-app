@@ -9,8 +9,7 @@ const postService = new PostService()
 const authService = new AuthService()  
 
 function PostList() {
-  const rawUser = localStorage.getItem("loggedUser");
-  const loggedUser = JSON.parse(rawUser)
+ 
   
   const [users, setUsers] = useState({})
   const [posts, setPosts] = useState([])
@@ -20,11 +19,8 @@ function PostList() {
         postService
         .getAllPosts()
         .then(({data}) => {
-
-          setPosts(prevState => {
-             return [...prevState, ...data.post.post]
-
-           })
+           console.log(data)
+          setPosts(data.post)
 
           })
           .catch(err => {
@@ -39,22 +35,22 @@ function PostList() {
     <PostContainer> 
         <h1>Anuncios</h1>
         <section id="list-container">
-                      {posts.map(post=> {
-                                
-                        return (
-                           
-                          <div key={post._id}>
-                           <img src={loggedUser.image} alt={loggedUser.firstName} />
-                            <p>Yo soy:{loggedUser.firstName}</p>
-                            <p>{post.title}</p>
-                            <p>{post.content}</p>
-                              
-                            <Link to={`/posts/${post._id}`}>
+          {posts.post ? posts.post.map((e,i )=>{
+            console.log(e)
+            return (
+              <div>
+                <h1>{posts.firstName}</h1>
+                <h1>{posts.lastName}</h1>
+                <p>{e.content}</p>
+                    
+                <Link to={`/posts/${e._id}`}>
                               <button>Editar</button>
-                            </Link>
-                          </div>
-                        )
-                  })}
+                 </Link>
+              </div>
+            )
+
+          }) : ''}
+                     
          </section>
       </PostContainer> 
     </div>

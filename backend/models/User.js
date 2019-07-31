@@ -32,7 +32,7 @@ const userSchema =  new Schema(
     post:[{
       type: Schema.Types.ObjectId,
       ref:'Post'
-    }]  ,
+    }],
     image: {
 			type: String,
 			default: "https://ischool.illinois.edu/sites/default/files/styles/normal_square/public/images/empty-avatar-01_1.jpg"

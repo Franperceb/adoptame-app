@@ -8,7 +8,7 @@ const {createPost,getAllPosts,getOnePost,updatePost,deletePost} = require('../co
 router.post('/posts',verifyToken,createPost)
 
 //Read Posts(all)
-router.get('/posts',getAllPosts)
+router.get('/posts',verifyToken, getAllPosts)
 
 //Read Posts(detail)
 router.get('/posts/:id',getOnePost)

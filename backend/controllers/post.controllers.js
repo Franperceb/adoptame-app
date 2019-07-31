@@ -2,8 +2,9 @@ const Post = require('../models/Post')
 const User = require('../models/User')
 
 exports.getAllPosts = (req,res,next) =>{
-  Post.find()
-  .then(posts => res.status(200).json({posts}))
+  const id= req.user._id
+  User.findById(id).populate('post')
+  .then(post => res.status(200).json({post}))
   .catch(err => res.status(500).json({err}))
 }
 
@@ -16,14 +17,16 @@ exports.getOnePost  = (req,res,next) => {
 }
 
 exports.createPost = async (req,res,next) => {
-
+  const {id} = req.user
+  console.log(id)
   try{ 
-     const post = await Post.create({...req.body})
-   
+    const post = await Post.create({...req.body, authorId:id})
+      
       await User.findByIdAndUpdate(req.user._id, {$push: {post: post._id}}, {new: true})
       res.status(201).json({post})
 }catch(err){ 
   res.status(500).json(err)
+  console.log(err)
 } 
 }
 

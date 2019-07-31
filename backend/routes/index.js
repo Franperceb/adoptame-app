@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { signup, login, logout, profile , postUpload,postEdit} = require('../controllers/auth.controllers')
+const { signup, login, logout, profile , postUpload,postEdit ,getAllUsers} = require('../controllers/auth.controllers')
 const passport = require('../config/passport')
 const { verifyToken } = require('../config/jwt')
 const uploadCloud = require('../config/cloudinary')
@@ -15,5 +15,6 @@ router.get('/logout', logout)
 
 
 router.get('/profile', verifyToken, profile)
+router.get('/users', verifyToken,getAllUsers )
 
 module.exports = router
