@@ -1,0 +1,38 @@
+import axios from 'axios'
+const baseURL =  'http://localhost:3000'
+
+class PostService {
+      constructor() {
+        this.service = axios.create({
+          baseURL,
+          withCredentials: true
+        })
+      }
+    
+      getAllPosts() {
+        return this.service.get('/posts')
+      }
+
+      
+      createPost(data) {
+        return this.service.post('/posts',data)
+      }
+    
+    
+      getOnePost(id) {
+   
+        return this.service.get(`/posts/${id}`)
+      }
+    
+    
+      updatePost(id, data) {
+        return this.service.patch(`/posts/${id}`, data)
+      }
+    
+      deletePost(id) {
+        return this.service.delete(`/posts/${id}`)
+      }
+    }
+    
+
+export default PostService
