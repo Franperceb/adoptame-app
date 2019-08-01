@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.9db8fde1.chunk.css",
-    "main.js": "/static/js/main.c74679ce.chunk.js",
-    "main.js.map": "/static/js/main.c74679ce.chunk.js.map",
+    "main.css": "/static/css/main.7ae47873.chunk.css",
+    "main.js": "/static/js/main.b469a5bb.chunk.js",
+    "main.js.map": "/static/js/main.b469a5bb.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.44835c37.chunk.js": "/static/js/2.44835c37.chunk.js",
-    "static/js/2.44835c37.chunk.js.map": "/static/js/2.44835c37.chunk.js.map",
+    "static/js/2.a8aafbcb.chunk.js": "/static/js/2.a8aafbcb.chunk.js",
+    "static/js/2.a8aafbcb.chunk.js.map": "/static/js/2.a8aafbcb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7b98a461e8f3e880db526d4477b2488e.js": "/precache-manifest.7b98a461e8f3e880db526d4477b2488e.js",
+    "precache-manifest.2488eec9161ad1fcb21fde1b06343c50.js": "/precache-manifest.2488eec9161ad1fcb21fde1b06343c50.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.9db8fde1.chunk.css.map": "/static/css/main.9db8fde1.chunk.css.map",
+    "static/css/main.7ae47873.chunk.css.map": "/static/css/main.7ae47873.chunk.css.map",
     "static/media/DogLanding.png": "/static/media/DogLanding.6b74c673.png",
+    "static/media/DoggieSignup.png": "/static/media/DoggieSignup.cb760edc.png",
+    "static/media/doggieAdd.jpg": "/static/media/doggieAdd.bba1192d.jpg",
+    "static/media/doggyLoginpng": "/static/media/doggyLoginpng.8626aa85.bin",
     "static/media/logo.svg": "/static/media/logo.1d7ce1c5.svg"
   }
 }
