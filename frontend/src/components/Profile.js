@@ -33,26 +33,25 @@ export default function Profile(props) {
 	return (
 		<div className="profMainContainer">
 			<NavBar/>
-						<h1> Tu perfil</h1>
+						<h1 id= "prof-title"> Tu perfil</h1>
 			<ProfileContainer>
 					<div>
 						<p>Nombre:</p>
-						<h4>{loggedUser.firstName}</h4>
+				      <b><p>{loggedUser.firstName}</p></b>
 						<p>Apellido:</p>
-						<h4>{loggedUser.lastName}</h4>
+					  <b><p>{loggedUser.lastName}</p></b>
 						<p>email:</p>
-						<h4>{loggedUser.email}</h4>
+					  <b><p>{loggedUser.email}</p></b>
 						<p> Numero:</p>
-						<h4>{loggedUser.phoneNumber}</h4>
+					  <b><p>{loggedUser.phoneNumber}</p></b>
 						<Link to="/edit"><Btn>Editar</Btn> </Link>
-
+						
 					</div>
 					<div>
 						<img src={loggedUser.image} alt={loggedUser.firstName} />
 						<input type="file" name="photo" id="file" onChange={selectPhoto} />
 						<label htmlFor="file" id="fileLabel" >Cambiar Foto</label>
-
-			    		<Link to='/add-post'><Btn>Anuncia </Btn></Link>	
+						<Link to="/all-posts"><Btn>Ver anuncios</Btn> </Link>
 					</div>
 			
 			</ProfileContainer>

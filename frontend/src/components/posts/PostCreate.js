@@ -2,6 +2,8 @@ import React from 'react'
 import useForm from '../../hooks/useForm'
 import PostService from '../../services/post'
 import NavBar from '../Navbar'
+import { Link } from 'react-router-dom'
+
 import {PetDetailContainer, CustomInput , Btn } from '../../styles'
 function PostCreate(props) {
   const rawUser = localStorage.getItem("loggedUser");
@@ -49,8 +51,9 @@ function PostCreate(props) {
 
         </div>
       <Btn onClick={createPost} >Crear Anuncio</Btn>
+        <Link to ='/pets' >  <Btn >Regresar</Btn> </Link>
         </PetDetailContainer>
- 
+
     </div>
   )
 }

@@ -5,6 +5,9 @@ import PetEdit from './PetEdit'
 import {PetDetContainer, Btn} from '../../styles'
 import NavBar from '../../components/Navbar'
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
+
+
 
 const petService = new PetService()
 let editClick = false;
@@ -89,7 +92,8 @@ const deletePet = () => {
             <p>Informacion adicional{pet.extraInfo}</p>
             </div>
               <Btn onClick={deletePet}>Delete</Btn>
-              <Btn onClick={() =>( editClick = true)}>Edit</Btn>
+            <Link to ='/pets' >  <Btn >Regresar</Btn> </Link>
+
     </PetDetContainer>
         { editClick=== true ? <PetEdit pet={pet} handleInput={handleInput} updatePet={updatePet} />
             :  console.log(editClick)}

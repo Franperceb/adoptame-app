@@ -5,7 +5,7 @@ import useForm from '../hooks/useForm'
 import {SignupContainer, CustomInput, Btn} from '../styles'
 import validate from "./ValidationLogin";
 import Swal from "sweetalert2";
-
+import DoggyLogin from "../images/doggyLoginpng"
 
 
 const Login = (props) => {
@@ -50,17 +50,20 @@ const Login = (props) => {
       <NavBar/> 
       <SignupContainer>
              <div>
-              <h2>Log in</h2>
+              <h1 className="title">Log in</h1>
                <form onSubmit={handleSubmit} noValidate>
               <label htmlFor="email">Email</label>
+              
               <CustomInput type="email" name="email" id="email"placeholder="Email"  onChange={handleInput} />
-              {errors.email && <p>{errors.email}</p>}
+                  {errors.email && <p>{errors.email}</p>}
+              
               <label htmlFor="password">Password</label>
               <CustomInput type="password" name="password" id="password"  placeholder="Password"  onChange={handleInput} />
               {errors.password && <p>{errors.password}</p>}
               <Btn onClick={handleLogin}>Log in</Btn>
               </form>
               </div>
+              <img src={DoggyLogin} alt="doggyLogin"/>
 
       </SignupContainer>
     </div>

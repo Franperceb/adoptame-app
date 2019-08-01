@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PetService from '../../services/pet'
 import Navbar from '../Navbar'
-import {PetsContainer} from '../../styles'
+import {PetsContainer, Btn} from '../../styles'
+
 const petService = new PetService()  
 
 
@@ -46,11 +47,15 @@ console.log(pets)
                         <p>{pet.name}</p>
                   
                   <Link to={`/pet-detail/${pet._id}`}>
-                    <button>Ver detalles</button>
+                    <Btn>Ver detalles</Btn>
                   </Link>
                </div>
           )})}
         </section>
+
+        <Link to={`/add-pet`}>
+                    <Btn>añadir mascota</Btn>
+                  </Link>
    </PetsContainer>
     </div>
   )

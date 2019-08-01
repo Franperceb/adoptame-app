@@ -24,6 +24,7 @@ exports.verifyToken = (req, res, next) => {
       .then(user => {
         req.user = user
         next()
+       
       })
       .catch(err => {
         res.status(401).json(err)

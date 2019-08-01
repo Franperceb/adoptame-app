@@ -19,3 +19,17 @@ code {
 .profMainContainer{
   margin-top: 60px;
 }
+
+#prof-title{
+  text-align:center;
+}
+
+.title{
+ text-align: center;
+}
+
+#doggy{
+  margin-top: auto;
+  width:40%;
+
+}

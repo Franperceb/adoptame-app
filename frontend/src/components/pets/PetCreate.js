@@ -3,7 +3,7 @@ import useForm from '../../hooks/useForm'
 import PetService from '../../services/pet'
 import {PetDetailContainer,CustomInput, Btn} from '../../styles'
 import NavBar from '../../components/Navbar'
-
+import Doggie from '../../images/doggieAdd.jpg'
 function PetCreate(props) {
     
 	const [form, handleInput] = useForm();
@@ -52,7 +52,7 @@ function PetCreate(props) {
                    </div>   
                      
                       <Btn onClick={createPet}> Create </Btn>
-                     <img src="https://wecnmagazine.com/wp-content/uploads/2019/03/1757b3757db06b9.jpg" alt="doggy"/>     
+                     <img src={Doggie} alt="doggy"/>     
                         
       </PetDetailContainer>
     </div>

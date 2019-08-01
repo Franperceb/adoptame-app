@@ -2,9 +2,9 @@ import React from 'react'
 import NavBar from './Navbar'
 import AuthService from '../services/auth'
 import useForm from '../hooks/useForm'
-import {SignupContainer, CustomInput, Btn} from '../styles'
+import {SignContainer, CustomInput, Btn} from '../styles'
 import validate from "./ValidationSignup";
-
+import DoggySignup from "../images/DoggieSignup.png"
 
 const Signup = (props) => {
 
@@ -24,7 +24,6 @@ const Signup = (props) => {
     authService
     .signup(form)
     .then(response => {
-     //notufucations
       console.log(response)
       props.history.push('/login')
     })
@@ -34,21 +33,29 @@ const Signup = (props) => {
   return (
     <div>
       <NavBar/>
-        <SignupContainer>
-              <h2>Sign up</h2>
+        <SignContainer>
+            <div>   
+              <h1>Sign up</h1>
+            
            <form onSubmit={handleSubmit} noValidate>
+              <label htmlFor="firstName">Nombre:  </label>            
               <CustomInput type="firstName" name="firstName" id="firstName"placeholder="Nombre" onChange={handleInput}/>
               {errors.firstName && <p>{errors.firstName}</p>}
+              <label htmlFor="lastName">Apellido:  </label>            
               <CustomInput type="lastName" name="lasttName" id="lastName"placeholder="Apellido" onChange={handleInput}/>
               {errors.lastName && <p>{errors.lastName}</p>}
+              <label htmlFor="email">Email:  </label>            
               <CustomInput type="email" name="email" id="email" placeholder="Email" onChange={handleInput}/>
               {errors.email && <p>{errors.email}</p>}
+              <label htmlFor="password">Contraseña:  </label>            
               <CustomInput type="password" name="password" id="password"  placeholder ="password" onChange={handleInput}/>
               {errors.password && <p>{errors.password}</p>}
             
               <Btn onClick={handleSignup}>Sign up</Btn>
             </form>
-      </SignupContainer>
+            </div>
+            <img src={DoggySignup} alt="DoggySignup" id="doggy"/>
+      </SignContainer>
     </div>
   )
 }

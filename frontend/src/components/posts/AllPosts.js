@@ -5,7 +5,7 @@ import Navbar from '../Navbar'
 
 const postService = new PostService()  
 
-function PostList() {
+function AllPosts() {
  
   
   const [posts, setPosts] = useState([])
@@ -15,7 +15,7 @@ function PostList() {
         postService
         .getAllPostsUser()
         .then(({data}) => {
-          console.log(data.post)
+          
           setPosts(data.post)
           })
           .catch(err => {
@@ -26,17 +26,21 @@ function PostList() {
 
   return (
     <div>
-       <Navbar/>
+      <Navbar/>
     <PostContainer> 
         <h1>Anuncios</h1>
         <section id="list-container">
           {posts ? posts.map((e,i )=>{
             return (
               <div>
-                {e.authorId ? <h1>{e.authorId.email}</h1>:  "" }
-              
-                <h1>{e.title}</h1>
-                <h1>{e.content}</h1>
+                {e.authorId ? <p>Yo soy: {e.authorId.firstName}</p> :  "" }
+                <p>Contacto:</p>
+                {e.authorId ? <p>{e.authorId.email}</p> :  "" }
+                <p>Telefono:</p>
+                {e.authorId ? <p>Yo soy: {e.authorId.phoneNumber}</p> :  "" }
+                
+                <p>Titulo:{e.title}</p>
+                <p>Contenido:{e.content}</p>
               </div>
             )
 
@@ -48,4 +52,4 @@ function PostList() {
   )
 }
 
-export default PostList
+export default AllPosts

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PostService from '../../services/post'
-import AuthService from '../../services/auth'
-import {PostContainer} from '../../styles'
+import {PostContainer, Btn} from '../../styles'
 import Navbar from '../Navbar'
 
 const postService = new PostService()  
-const authService = new AuthService()  
 
 function PostList() {
  
@@ -18,7 +16,6 @@ function PostList() {
         postService
         .getAllPosts()
         .then(({data}) => {
-           console.log(data)
           setPosts(data.post)
 
           })
@@ -33,25 +30,31 @@ function PostList() {
        <Navbar/>
     <PostContainer> 
         <h1>Anuncios</h1>
+           {/* <div id="overlay"> */}
         <section id="list-container">
           {posts.post ? posts.post.map((e,i )=>{
-            console.log(e)
+    
             return (
-              <div>
-                <h1>{posts.firstName}</h1>
-                <h1>{posts.lastName}</h1>
+              <div key={i}>
+                <b><p>Yo soy:{posts.firstName}</p></b>
+               <b> <p>Titulo del anuncio:</p></b>              
                 <p>{e.content}</p>
-                    
+               <b><p>Contacto:</p></b>
+                <p>{posts.email}</p>
+               <b> <p>Telefono</p></b>
+                <p>{posts.phoneNumber}</p>
+                <hr/>
                 <Link to={`/posts/${e._id}`}>
-                              <button>Editar</button>
+                              <Btn>Editar</Btn>
                  </Link>
+               
               </div>
             )
-
           }) :''}
-                     
          </section>
+        
       </PostContainer> 
+      
     </div>
   )
 }
