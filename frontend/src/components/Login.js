@@ -49,8 +49,9 @@ const Login = (props) => {
     <div>
       <NavBar/> 
       <SignupContainer>
+             <div>
               <h2>Log in</h2>
-              <form onSubmit={handleSubmit} noValidate>
+               <form onSubmit={handleSubmit} noValidate>
               <label htmlFor="email">Email</label>
               <CustomInput type="email" name="email" id="email"placeholder="Email"  onChange={handleInput} />
               {errors.email && <p>{errors.email}</p>}
@@ -59,6 +60,8 @@ const Login = (props) => {
               {errors.password && <p>{errors.password}</p>}
               <Btn onClick={handleLogin}>Log in</Btn>
               </form>
+              </div>
+
       </SignupContainer>
     </div>
   )

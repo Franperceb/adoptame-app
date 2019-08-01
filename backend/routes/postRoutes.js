@@ -1,13 +1,13 @@
 const router = require('express').Router()
 const { verifyToken } = require('../config/jwt')
-const {createPost,getAllPosts,getOnePost,updatePost,deletePost} = require('../controllers/post.controllers')
+const {createPost,getAllPosts,getOnePost,updatePost,deletePost,getAllPostsUsers} = require('../controllers/post.controllers')
 
 
 
 //create Post
 router.post('/posts',verifyToken,createPost)
 
-//Read Posts(all)
+//Read Posts(of user)
 router.get('/posts',verifyToken, getAllPosts)
 
 //Read Posts(detail)
@@ -18,5 +18,7 @@ router.patch('/posts/:id',updatePost)
 
 //delete Posts
 router.delete('/posts/:id',deletePost)
+// all Posts of users
+router.get('/all-posts', getAllPostsUsers)
 
 module.exports = router

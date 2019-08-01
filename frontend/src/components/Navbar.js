@@ -27,7 +27,7 @@ const Navbar = (props) => {
       <div></div>
       <div>
       <img src={IconLogo} width= "35"  alt="pawIcon"/>
-       <p>   Puppy Care</p>
+      <b><p> Adogtame </p> </b>
       </div>
       <div></div>
        <div>

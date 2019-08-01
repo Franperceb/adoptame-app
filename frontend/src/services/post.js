@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL =  'https://adoptame-app.herokuapp.com'
+const baseURL =  'http://localhost:3000'
 
 class PostService {
       constructor() {
@@ -11,6 +11,10 @@ class PostService {
     
       getAllPosts() {
         return this.service.get('/posts')
+      }
+
+      getAllPostsUser() {
+        return this.service.get('/all-posts')
       }
 
       

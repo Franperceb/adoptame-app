@@ -22,7 +22,7 @@ const app = express()
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3001', "https://adoptame-app.herokuapp.com"]
+    origin: ['http://localhost:3001']
   })
 )
 

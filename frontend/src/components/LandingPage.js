@@ -13,7 +13,7 @@ const LandingPage = () => {
             
               <div>
               <h2>Encuentra el cuidador ideal en  Puppy Care</h2>
-           <Link to ='/search'><Btn>Buscar</Btn></Link>
+           <Link to ='/add-post'><Btn>Anuncia</Btn></Link>
               </div>
            </LandingContainerOne>
             

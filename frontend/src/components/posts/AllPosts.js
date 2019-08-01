@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import PostService from '../../services/post'
-import AuthService from '../../services/auth'
 import {PostContainer} from '../../styles'
 import Navbar from '../Navbar'
 
 const postService = new PostService()  
-const authService = new AuthService()  
 
 function PostList() {
  
@@ -16,17 +13,16 @@ function PostList() {
 
     useEffect(()=> {
         postService
-        .getAllPosts()
+        .getAllPostsUser()
         .then(({data}) => {
-           console.log(data)
+          console.log(data.post)
           setPosts(data.post)
-
           })
           .catch(err => {
             console.log(err)
           })
       },[])
-
+      
 
   return (
     <div>
@@ -34,21 +30,17 @@ function PostList() {
     <PostContainer> 
         <h1>Anuncios</h1>
         <section id="list-container">
-          {posts.post ? posts.post.map((e,i )=>{
-            console.log(e)
+          {posts ? posts.map((e,i )=>{
             return (
               <div>
-                <h1>{posts.firstName}</h1>
-                <h1>{posts.lastName}</h1>
-                <p>{e.content}</p>
-                    
-                <Link to={`/posts/${e._id}`}>
-                              <button>Editar</button>
-                 </Link>
+                {e.authorId ? <h1>{e.authorId.email}</h1>:  "" }
+              
+                <h1>{e.title}</h1>
+                <h1>{e.content}</h1>
               </div>
             )
 
-          }) :''}
+          }) : <h1>'no hay anuncios aun'</h1>}
                      
          </section>
       </PostContainer> 

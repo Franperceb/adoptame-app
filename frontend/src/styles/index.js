@@ -56,7 +56,7 @@ export const Btn = styled.button`
 &:hover{
   cursor: pointer;
   box-shadow: rgba(198, 208, 235, 0.5) 0px 10px 20px;
-  background: grey;
+  background: olive;
 }
 
 `
@@ -116,9 +116,9 @@ export const LandingContainerOne = styled.div`
   margin-bottom: 0;
   margin-left: 19px;
   border: 1px solid #efefef;
-}
 
-                        
+}
+             
 `
 
 
@@ -128,18 +128,33 @@ export const SignupContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  /* margin-lefT: 20px; */
 
 div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content:space-around;
-  border: 1px solid black;
-  width: 100vw;
+  border: 1px solid green;
+  width: 100vw;                                                                                                                                                                                                                                                                                         
   height: 300px;
 }
+/* div:nth-child(1){
+  background: white;
+  border-radius: 10px;
+  width: 50%;
+  height: 60%;
+  box-shadow: 1px 1px 1px rgba(121, 120, 120, 0.103);
 
+}
+& div:hover{
+ 
+  text-decoration: none;
+  color: rgb(75, 74, 74);
+ */
+}
+           
 
 `
 export const MapContainer = styled.div`
@@ -362,6 +377,7 @@ export const PostContainer = styled.div`
   border: none;
  
 }
+
 & div:hover{
   height: 220px;
   box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
